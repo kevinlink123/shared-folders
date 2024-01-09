@@ -7,11 +7,12 @@ export class FileUploadService {
     private GCP_BUCKET = 'waisman-web-shared-folders';
     constructor() {
         const GCP_PROJECT_ID = 'shared-folders-410613';
-        const GCP_KEY_FILE_PATH = 'gcp-key.json';
+        // const GCP_KEY_FILE_PATH = 'gcp-key.json';
+
 
         this.storage = new Storage({
             projectId: GCP_PROJECT_ID,
-            keyFilename: GCP_KEY_FILE_PATH,
+            keyFile: process.env.GCP_KEYS_JSON_STRING
         });
     }
 

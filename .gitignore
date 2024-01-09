@@ -36,3 +36,6 @@ lerna-debug.log*
 
 # gcp-key
 gcp-key.json
+
+# env files
+.env
