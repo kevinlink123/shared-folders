@@ -19,8 +19,9 @@ export class FileUploadService {
     async getAllFiles() {
         const bucket = this.storage.bucket(this.GCP_BUCKET);
         const [files] = await bucket.getFiles();
+        const sortedFiles = files.reverse()
 
-        return files.map((file) => {
+        return sortedFiles.map((file) => {
             return {
                 publicUrl: file.publicUrl(),
                 name: file.name
