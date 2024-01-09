@@ -7,7 +7,6 @@ export class FileUploadController {
 	constructor(private fileUploadService: FileUploadService) {}
     @Get()
 	getAllFiles() {
-		console.log("AAAAA");
 		return this.fileUploadService.getAllFiles();
 	}
 	

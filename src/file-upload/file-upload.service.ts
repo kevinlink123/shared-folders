@@ -8,11 +8,11 @@ export class FileUploadService {
     constructor() {
         const GCP_PROJECT_ID = 'shared-folders-410613';
         // const GCP_KEY_FILE_PATH = 'gcp-key.json';
-
+        const GCP_KEYS = process.env.GCP_KEY_FILENAME;
 
         this.storage = new Storage({
             projectId: GCP_PROJECT_ID,
-            keyFile: process.env.GCP_KEYS_JSON_STRING
+            keyFilename: GCP_KEYS
         });
     }
 
